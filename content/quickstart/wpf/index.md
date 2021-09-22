@@ -8,8 +8,6 @@ Date: 2021-09-21
 
 This page demonstrates how to use Maui.Graphics in a WPF application. 
 
-Source code for this application is available: https://github.com/swharden/Maui.Graphics/tree/main/projects
-
 <div class='text-center img-border'>
 
 ![](maui-graphics-quickstart-wpf.png)
