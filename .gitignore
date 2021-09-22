@@ -1,1 +1,5 @@
 wwwroot/*/index.html
+.vscode/
+.vs/
+bin/
+obj/
