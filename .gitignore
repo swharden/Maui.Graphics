@@ -3,3 +3,4 @@ wwwroot/*/index.html
 .vs/
 bin/
 obj/
+content/**/index.html
