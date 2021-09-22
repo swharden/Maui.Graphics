@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <Version>2.0.0</Version>
+        <UseWPF>true</UseWPF>
+        <UseWindowsForms>true</UseWindowsForms>
+        <RootNamespace>Microsoft.Maui.Graphics.Skia</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Maui.Graphics" Version="6.0.100-rc.1.413" />
+      <PackageReference Include="Microsoft.Maui.Graphics.Skia" Version="6.0.100-rc.1.413" />
+      <PackageReference Include="SkiaSharp" Version="2.88.0-preview.120" />
+      <PackageReference Include="SkiaSharp.Views" Version="2.88.0-preview.120" />
+      <PackageReference Include="SkiaSharp.Views.WPF" Version="2.88.0-preview.120" />
+    </ItemGroup>
+
+</Project>
