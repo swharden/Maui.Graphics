@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: 🚀 Deploy
+    name: 🚀 Generate and Deploy
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
@@ -29,7 +29,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@65c6a8f943bbf04faf9b59520a103318b418952e # 4.1.0
         with:
           local-dir: content/
-          server-dir: /
+          server-dir: /maui.graphics/public_html
           protocol: ftps
           server: maui.graphics
           username: ${{ secrets.FTP_USERNAME }}
