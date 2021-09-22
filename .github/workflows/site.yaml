@@ -26,6 +26,7 @@ jobs:
         run: dotnet build dev/SiteBuilder --no-restore
 
       - name: 🌎 Generate Website
+        working-directory: dev/SiteBuilder
         run: dotnet run --project dev/SiteBuilder
 
       - name: 🚀 Deploy
