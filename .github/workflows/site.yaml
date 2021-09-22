@@ -28,7 +28,7 @@ jobs:
       - name: 🚀 Deploy
         uses: SamKirkland/FTP-Deploy-Action@65c6a8f943bbf04faf9b59520a103318b418952e # 4.1.0
         with:
-          local-dir: /content/
+          local-dir: content/
           server-dir: /
           protocol: ftps
           server: maui.graphics
