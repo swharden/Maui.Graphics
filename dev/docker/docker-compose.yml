@@ -1,0 +1,10 @@
+version: "2"
+services:
+  statix:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    ports:
+      - "8085:80"
+    volumes:
+      - ../../content:/usr/local/apache2/htdocs/
