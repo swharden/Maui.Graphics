@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: 🚀 Generate and Deploy
+    name: 🚀 Deploy
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
@@ -25,11 +25,11 @@ jobs:
         working-directory: dev/SiteBuilder
         run: dotnet run
 
-      - name: 🚀 Deploy
+      - name: 🚀 Deploy over FTP
         uses: SamKirkland/FTP-Deploy-Action@65c6a8f943bbf04faf9b59520a103318b418952e # 4.1.0
         with:
           local-dir: content/
-          server-dir: /maui.graphics/public_html
+          server-dir: /maui.graphics/public_html/
           protocol: ftps
           server: maui.graphics
           username: ${{ secrets.FTP_USERNAME }}
