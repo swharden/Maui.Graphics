@@ -1,38 +1,36 @@
 ---
-Title: Maui.Graphics WPF Quickstart
-Description: How to use Maui.Graphics in a WPF application
+Title: Maui.Graphics WinForms Quickstart
+Description: How to use Maui.Graphics in a Windows Forms application
 Date: 2021-09-21
 ---
 
-# Maui.Graphics WPF Quickstart
+# Maui.Graphics WinForms Quickstart
 
-This page demonstrates how to use Maui.Graphics in a WPF application. 
+This page demonstrates how to use Maui.Graphics in a Windows Forms application. 
 
 <div class='text-center img-border'>
 
-![](maui-graphics-quickstart-wpf.png)
+![](maui-graphics-quickstart-winforms.png)
 
 </div>
 
 ## Steps
 
-> **WARNING:** At the time of writing Microsoft.Maui.Graphics is still in pre-release and the WPF control is not available as a NuGet package. This is likely to get easier in the future.
+> **WARNING:** At the time of writing Microsoft.Maui.Graphics is still in pre-release and the WinForms control is not available as a NuGet package. This is likely to get easier in the future.
 
-* Create a WPF application
-* Add NuGet packages
+* Create a WinForms application
+* Add NuGet package
   * [Microsoft.Maui.Graphics](https://www.nuget.org/packages/Microsoft.Maui.Graphics)
-  * [Microsoft.Maui.Graphics.Skia](https://www.nuget.org/packages/Microsoft.Maui.Graphics.Skia)
-* Add WPF control package from source
-  * [Microsoft.Maui.Graphics.Skia.WPF](https://github.com/dotnet/Microsoft.Maui.Graphics/tree/main/src/Microsoft.Maui.Graphics.Skia.WPF) (it's not on NuGet yet)
+* Add WinForms control package from source
+  * [Microsoft.Maui.Graphics.GDI.WinForms](https://github.com/dotnet/Microsoft.Maui.Graphics/tree/main/src/Microsoft.Maui.Graphics.GDI.Winforms) (it's not on NuGet yet)
 * Create a `Drawable` that describes what you want to render
-* Place a `WDSkiaGraphicsView` in your layout
-* Create a `Drawable` and assign it to `WDSkiaGraphicsView`
+* Place a `GDIGraphicsView` in your layout
+* Create a `Drawable` and assign it to the `GDIGraphicsView`
 * Add a `Loaded` event to invalidate the control (forcing a render at launch)
 
 ## MyDrawable.cs
 ```cs
 using Microsoft.Maui.Graphics;
-using System;
 
 public class MyDrawable : IDrawable
 {
@@ -73,33 +71,18 @@ public class MyDrawable : IDrawable
 }
 ```
 
-## MainWindow.xaml
+## Form1.cs
 
-```xml
-<Window x:Class="QuickstartWpf.MainWindow"
-        ...
-        xmlns:Skia="clr-namespace:Microsoft.Maui.Graphics.Skia;assembly=Microsoft.Maui.Graphics.Skia.WPF"
-        Title="Maui.Graphics Quickstart - WPF (Skia)" Height="300" Width="400">
-    <Grid>
-        <Skia:WDSkiaGraphicsView Name="MyGraphicsView" />
-    </Grid>
-</Window>
-```
-
-## MainWindow.xaml.cs
-
-* 💡 Invaliding the control after the window is loaded forces it to draw after the program starts
+* 💡 Invaliding the control after the size changes forces the whole window to redraw
 
 ```cs
-using System.Windows;
-
-public partial class MainWindow : Window
+public partial class Form1 : Form
 {
-    public MainWindow()
+    public Form1()
     {
         InitializeComponent();
-        MyGraphicsView.Drawable = new MyDrawable();
-        Loaded += (_, _) => MyGraphicsView.Invalidate();
+        gdiGraphicsView1.Drawable = new GraphicsModels.RandomCircles();
+        gdiGraphicsView1.SizeChanged += (_, _) => gdiGraphicsView1.Invalidate();
     }
 }
 ```
