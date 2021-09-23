@@ -1,11 +1,14 @@
 ﻿using System.Windows;
-namespace QuickstartWpf;
 
-public partial class MainWindow : Window
+namespace QuickstartWpf
 {
-    public MainWindow()
+    public partial class MainWindow : Window
     {
-        MyGraphicsView.Drawable = new GraphicsModels.RandomCircles();
-        Loaded += (_, _) => MyGraphicsView.Invalidate();
+        public MainWindow()
+        {
+            InitializeComponent();
+            MyGraphicsView.Drawable = new GraphicsModels.RandomCircles();
+            Loaded += (_, _) => MyGraphicsView.Invalidate();
+        }
     }
 }
