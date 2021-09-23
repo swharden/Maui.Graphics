@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GraphicsModels\GraphicsModels.csproj" />
     <ProjectReference Include="..\Microsoft.Maui.Graphics.Skia.WPF\Microsoft.Maui.Graphics.Skia.WPF.csproj" />
   </ItemGroup>
 

@@ -5,8 +5,7 @@ public partial class MainWindow : Window
 {
     public MainWindow()
     {
-        InitializeComponent();
-        MyGraphicsView.Drawable = new MyDrawable();
+        MyGraphicsView.Drawable = new GraphicsModels.RandomCircles();
         Loaded += (_, _) => MyGraphicsView.Invalidate();
     }
 }
