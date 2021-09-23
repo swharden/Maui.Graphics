@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GraphicsModels\GraphicsModels.csproj" />
-    <ProjectReference Include="..\Microsoft.Maui.Graphics.GDI.Winforms\Microsoft.Maui.Graphics.GDI.Winforms.csproj" />
+    <ProjectReference Include="..\controls\Microsoft.Maui.Graphics.GDI.Winforms\Microsoft.Maui.Graphics.GDI.Winforms.csproj" />
   </ItemGroup>
 
 </Project>

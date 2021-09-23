@@ -5,13 +5,15 @@ VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickstartWpf", "QuickstartWpf\QuickstartWpf.csproj", "{565566E0-E6C8-4305-8DBA-8319D6EBB8E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Maui.Graphics.Skia.WPF", "Microsoft.Maui.Graphics.Skia.WPF\Microsoft.Maui.Graphics.Skia.WPF.csproj", "{0034DA5E-A4E9-4FF0-87A6-2699B4D194DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickstartWinForms", "QuickstartWinForms\QuickstartWinForms.csproj", "{D2C9C0EE-8BDB-475C-966A-DE23CB26FAAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickstartWinForms", "QuickstartWinForms\QuickstartWinForms.csproj", "{D2C9C0EE-8BDB-475C-966A-DE23CB26FAAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphicsModels", "GraphicsModels\GraphicsModels.csproj", "{7148C3D0-80CF-4431-8477-A249A585A3FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Maui.Graphics.GDI.Winforms", "Microsoft.Maui.Graphics.GDI.Winforms\Microsoft.Maui.Graphics.GDI.Winforms.csproj", "{58CCB990-40E5-4675-9675-7CA19EE90F10}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "controls", "controls", "{564C94ED-F166-48A6-AE93-FCF033EE7D1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsModels", "GraphicsModels\GraphicsModels.csproj", "{7148C3D0-80CF-4431-8477-A249A585A3FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Maui.Graphics.GDI.Winforms", "controls\Microsoft.Maui.Graphics.GDI.Winforms\Microsoft.Maui.Graphics.GDI.Winforms.csproj", "{5E5D504F-1C8F-4421-AB41-7A09F606A901}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Maui.Graphics.Skia.WPF", "controls\Microsoft.Maui.Graphics.Skia.WPF\Microsoft.Maui.Graphics.Skia.WPF.csproj", "{030E887C-AE5B-462D-805E-5E8D08100119}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,25 +25,29 @@ Global
 		{565566E0-E6C8-4305-8DBA-8319D6EBB8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{565566E0-E6C8-4305-8DBA-8319D6EBB8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{565566E0-E6C8-4305-8DBA-8319D6EBB8E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0034DA5E-A4E9-4FF0-87A6-2699B4D194DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0034DA5E-A4E9-4FF0-87A6-2699B4D194DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0034DA5E-A4E9-4FF0-87A6-2699B4D194DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0034DA5E-A4E9-4FF0-87A6-2699B4D194DB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D2C9C0EE-8BDB-475C-966A-DE23CB26FAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D2C9C0EE-8BDB-475C-966A-DE23CB26FAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2C9C0EE-8BDB-475C-966A-DE23CB26FAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2C9C0EE-8BDB-475C-966A-DE23CB26FAAF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58CCB990-40E5-4675-9675-7CA19EE90F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58CCB990-40E5-4675-9675-7CA19EE90F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58CCB990-40E5-4675-9675-7CA19EE90F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58CCB990-40E5-4675-9675-7CA19EE90F10}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7148C3D0-80CF-4431-8477-A249A585A3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7148C3D0-80CF-4431-8477-A249A585A3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7148C3D0-80CF-4431-8477-A249A585A3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7148C3D0-80CF-4431-8477-A249A585A3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E5D504F-1C8F-4421-AB41-7A09F606A901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E5D504F-1C8F-4421-AB41-7A09F606A901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E5D504F-1C8F-4421-AB41-7A09F606A901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E5D504F-1C8F-4421-AB41-7A09F606A901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{030E887C-AE5B-462D-805E-5E8D08100119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{030E887C-AE5B-462D-805E-5E8D08100119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{030E887C-AE5B-462D-805E-5E8D08100119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{030E887C-AE5B-462D-805E-5E8D08100119}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5E5D504F-1C8F-4421-AB41-7A09F606A901} = {564C94ED-F166-48A6-AE93-FCF033EE7D1E}
+		{030E887C-AE5B-462D-805E-5E8D08100119} = {564C94ED-F166-48A6-AE93-FCF033EE7D1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {602C7075-10BB-41F0-A7C3-4EA0BB077007}
