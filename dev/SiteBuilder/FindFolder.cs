@@ -3,18 +3,18 @@ using System.IO;
 
 public static class FindFolder
 {
-    public static DirectoryInfo Content() => FindAdjacentFolder("content");
+    public static string Content() => FindAdjacentFolder("content");
 
-    public static DirectoryInfo Theme(string name)
+    public static string Theme(string name)
     {
-        string themes = FindAdjacentFolder("themes").FullName;
+        string themes = FindAdjacentFolder("themes");
         string theme = Path.Combine(themes, name);
         if (!Directory.Exists(theme))
             throw new ArgumentException($"theme not found: {theme}");
-        return new DirectoryInfo(theme);
+        return theme;
     }
 
-    private static DirectoryInfo FindAdjacentFolder(string targetFolderName, string startSearchAt = "./", int maxDepth = 20)
+    private static string FindAdjacentFolder(string targetFolderName, string startSearchAt = "./", int maxDepth = 20)
     {
         string currentPath = Path.GetFullPath(startSearchAt);
         for (int i = 0; i < maxDepth; i++)
@@ -23,7 +23,7 @@ public static class FindFolder
 
             if (Directory.Exists(possibleFolderPath))
             {
-                return new DirectoryInfo(possibleFolderPath);
+                return possibleFolderPath;
             }
 
             currentPath = Path.GetDirectoryName(currentPath)
