@@ -5,4 +5,4 @@
 
 * `docker-compose up -d`
 
-* http://localhost:8085
+* http://localhost:8080

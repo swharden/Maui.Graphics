@@ -5,6 +5,6 @@ services:
       context: .
       dockerfile: ./dockerfile
     ports:
-      - "8085:80"
+      - "8080:80"
     volumes:
       - ../../content:/usr/local/apache2/htdocs/
