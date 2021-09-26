@@ -37,4 +37,4 @@ jobs:
           log-level: minimal
 
       - name: 🧹 Clear Website Cache
-        run: curl --user deploy:${{ secrets.CACHE_PASSWORD }} https://swharden.com/admin/clear-cache.php
+        run: curl --user deploy:${{ secrets.CACHE_PASSWORD }} https://maui.graphics/admin/clear-cache.php
