@@ -1,5 +1,5 @@
 ---
-Title: Maui.Graphics WPF Quickstart
+Title: WPF Quickstart - Maui.Graphics
 Description: How to use Maui.Graphics in a WPF application
 Date: 2021-09-21
 ---

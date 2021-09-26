@@ -1,5 +1,5 @@
 ---
-Title: Maui.Graphics WinForms Quickstart
+Title: WinForms Quickstart - Maui.Graphics
 Description: How to use Maui.Graphics in a Windows Forms application
 Date: 2021-09-21
 ---
