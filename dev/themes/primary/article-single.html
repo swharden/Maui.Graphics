@@ -4,17 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="{{URL_PAGE_BASE}}">
+
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
+    <link href="{{URL_SITE_ROOT}}/assets/css/style.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/styles/xcode.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/highlight.min.js"></script>
     <script defer>hljs.highlightAll();</script>
-
-    <title>{{TITLE}}</title>
-    <meta name="description" content="{{DESCRIPTION}}">
-    <base href="{{URL_PAGE_BASE}}">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5V5LZMVT4"></script>
     <script>
@@ -23,128 +25,6 @@
         gtag('js', new Date());
         gtag('config', 'G-X5V5LZMVT4');
     </script>
-
-    <style>
-        a {
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        article img {
-            margin-top: 1em;
-            margin-bottom: 1em;
-            max-width: 100% !important;
-        }
-
-        article .img-border img {
-            border: 1px solid black;
-            box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
-            margin-top: 1em;
-            margin-bottom: 2em;
-        }
-
-        article .img-micro img {
-            max-width: 25% !important;
-            max-height: 12em !important;
-            margin: .5em !important;
-        }
-
-        article .img-small img {
-            max-width: 35% !important;
-            margin: 1em !important;
-        }
-
-        article .img-medium img {
-            max-width: 65% !important;
-            margin: 1em !important;
-        }
-
-        article code.hljs {
-            background: transparent;
-            margin-top: 2em;
-            margin-bottom: 2em;
-            padding: .5em !important;
-            background: #f8f8f8;
-            border-radius: 3px;
-            border: 1px solid #ddd !important;
-            font-size: 14px;
-            line-height: 150%;
-            overflow-x: auto;
-        }
-
-        article blockquote {
-            background-color: #f6f8fa;
-            padding: 1em;
-            margin: 2rem 3rem 2rem;
-            display: block;
-            border: 1px solid #ddd;
-            border-left: 5px solid #ddd;
-            border-radius: 3px;
-        }
-
-        blockquote p {
-            margin: 0;
-        }
-
-        /* GitHub-style tables */
-
-        table {
-            margin: 2em 0em;
-        }
-
-        td {
-            border: 1px solid #dfe2e5;
-            padding: .4em;
-        }
-
-        th {
-            background-color: #f6f8fa;
-            border: 1px solid #dfe2e5;
-            font-weight: 600;
-            padding: .4em;
-        }
-
-        .nav-item.dropdown a {
-            padding: .5em;
-        }
-
-        .dropdown-menu {
-            background-color: #9b4f96;
-        }
-
-        .dropdown-item.disabled {
-            color: rgba(255, 255, 255, .2);
-        }
-
-        .dropdown-menu a {
-            color: rgba(255, 255, 255, .8);
-        }
-
-        .dropdown-menu a:hover {
-            color: white;
-            background-color: #b866b2;
-        }
-
-        .dropdown-toggle {
-            border-radius: 10px;
-            background-color: transparent;
-            border-color: transparent;
-            box-shadow: none !important;
-        }
-
-        .dropdown-toggle:hover {
-            background-color: #9b4f96;
-            border-color: transparent;
-        }
-
-        .navbar-toggler {
-            background-color: #9b4f96;
-        }
-    </style>
-
 </head>
 
 <body class="bg-light">
@@ -168,10 +48,13 @@
                             </a>
                             <ul class="dropdown-menu shadow-sm" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{URL_SITE_ROOT}}/quickstart/wpf">WPF</a></li>
-                                <li><a class="dropdown-item" href="{{URL_SITE_ROOT}}/quickstart/winforms">Windows Forms</a>
+                                <li><a class="dropdown-item" href="{{URL_SITE_ROOT}}/quickstart/winforms">Windows
+                                        Forms</a>
                                 </li>
-                                <li><a class="dropdown-item disabled" href="{{URL_SITE_ROOT}}/quickstart/maui">MAUI</a></li>
-                                <li><a class="dropdown-item disabled" href="{{URL_SITE_ROOT}}/quickstart/winui">WinUI</a>
+                                <li><a class="dropdown-item disabled" href="{{URL_SITE_ROOT}}/quickstart/maui">MAUI</a>
+                                </li>
+                                <li><a class="dropdown-item disabled"
+                                        href="{{URL_SITE_ROOT}}/quickstart/winui">WinUI</a>
                                 </li>
                             </ul>
                         </li>
@@ -208,11 +91,6 @@
                             </ul>
                         </li>
 
-                        <!-- GitHub Button
-                        <a class="github-button" href="https://github.com/swharden/Maui.Graphics" data-size="large"
-                            aria-label="Star swharden/Maui.Graphics on GitHub">GitHub</a>
-                        -->
-
                     </ul>
                 </div>
             </div>
@@ -220,10 +98,6 @@
     </div>
 
     <div class="container mx-auto" style="max-width: 1000px;">
-
-        <!-- C# colors: 9b4f96 67217A -->
-        <!-- github background light: f6f8fa -->
-        <!-- github background dark: 24292f-->
 
         <div class="border shadow-sm rounded-3 mt-5 bg-white">
 
@@ -261,10 +135,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
-
-    <!-- GitHub Button
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    -->
 
 </body>
 
