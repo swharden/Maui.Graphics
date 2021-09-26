@@ -1,9 +1,7 @@
-version: "2"
 services:
   statix:
-    build:
-      context: .
-      dockerfile: ./dockerfile
+    container_name: MauiGraphicsServer
+    image: httpd:2
     ports:
       - "8080:80"
     volumes:
