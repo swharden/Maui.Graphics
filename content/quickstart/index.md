@@ -6,6 +6,7 @@ Description: Maui.Graphics Quickstart
 
 # Maui.Graphics Quickstart
 
+* [Console](console)
 * [WPF](wpf)
 * [Windows Forms](winforms)
 * [MAUI](maui)
