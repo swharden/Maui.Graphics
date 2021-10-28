@@ -14,6 +14,7 @@ class TestClass
             rootUrl: isDevEnvironment ? "http://localhost:8080/" : "https://maui.graphics/"
         );
         ssg.Generate();
+        ssg.GenerateSitemap();
         Console.WriteLine($"Complete! {ssg.RootUrl}");
     }
 }

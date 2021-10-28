@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="statix" Version="0.0.8" />
+    <PackageReference Include="statix" Version="0.0.12" />
   </ItemGroup>
 
 </Project>
