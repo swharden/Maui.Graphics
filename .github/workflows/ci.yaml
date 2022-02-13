@@ -1,0 +1,33 @@
+name: GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛒 Checkout
+      - uses: actions/checkout@v2
+
+      - name: ✨ Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.92.2"
+
+      - name: 🛠️ Build
+        run: hugo --minify --verbose --debug
+
+      - name: 🚀 Deploy
+        uses: SamKirkland/FTP-Deploy-Action@a9644610a0efe63542b1887c9317ce8628f56521 # 4.2.0
+        with:
+          local-dir: ./website/public/
+          server-dir: /maui.graphics/public_html/test123/
+          protocol: ftps
+          server: maui.graphics
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          log-level: minimal
