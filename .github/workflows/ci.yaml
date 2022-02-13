@@ -27,7 +27,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@a9644610a0efe63542b1887c9317ce8628f56521 # 4.2.0
         with:
           local-dir: ./website/public/
-          server-dir: /maui.graphics/public_html/test123/
+          server-dir: /maui.graphics/public_html/
           protocol: ftps
           server: maui.graphics
           username: ${{ secrets.FTP_USERNAME }}
