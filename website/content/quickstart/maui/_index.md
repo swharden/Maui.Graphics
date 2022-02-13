@@ -1,10 +1,8 @@
 ---
-Title: MAUI Quickstart - Maui.Graphics
+Title: Maui.Graphics Maui Quickstart
 Description: How to draw on a graphics view using Maui.Graphics in a MAUI application
-Date: 2021-09-21
+Date: "2021-09-21"
 ---
-
-# Maui.Graphics WinForms Quickstart
 
 ```xml
 <ContentPage xmlns=http://schemas.microsoft.com/dotnet/2021/maui

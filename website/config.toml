@@ -1,0 +1,10 @@
+baseURL = "https://maui.graphics"
+title = "Maui.Graphics"
+author = "Scott W Harden"
+copyright = "Copyright © 2022 by Scott W Harden and the open-source community."
+enableInlineShortcodes = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

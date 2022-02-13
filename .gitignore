@@ -1,3 +1,4 @@
+website/public/**
 wwwroot/*/index.html
 .vscode/
 .vs/

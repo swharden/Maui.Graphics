@@ -1,12 +1,8 @@
 ---
-Title: Console Quickstart - Maui.Graphics
+Title: Maui.Graphics Console Quickstart
 Description: How to use Maui.Graphics in a Console Application
-Date: 2021-10-27
 ---
-
-# Maui.Graphics Console Quickstart
-
-
+ 
 ### Create a Console Application
 
 ```
