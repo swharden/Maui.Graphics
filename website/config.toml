@@ -1,0 +1,5 @@
+baseURL = "https://ScottPlot.NET"
+title = "ScottPlot"
+author = "Scott W Harden"
+copyright = "Copyright © 2022 by Scott W Harden and the open-source community."
+enableInlineShortcodes = true
