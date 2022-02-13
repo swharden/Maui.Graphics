@@ -15,6 +15,11 @@ article pre {
     background-color: transparent !important;
 }
 
+article p code {
+    padding: 0px 3px;
+    color: #6c757d;
+}
+
 article code.hljs {
     background: transparent;
     background: #f8f8f8;
