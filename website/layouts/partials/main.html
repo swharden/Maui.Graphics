@@ -18,7 +18,9 @@
 
     <link rel="stylesheet" href="/css/page.css">
 
+    {{ if not .Params.hideAnalytics }}
     {{ partial "analytics.html" }}
+    {{ end }}
 
 </head>
 
@@ -33,9 +35,13 @@
             <h1 class="mb-0">
                 <span class="display-5">{{ .Title | markdownify }}</span>
             </h1>
+
+            {{ if not .Params.hideDescription }}
             <div class="mb-3 text-muted">
                 {{ .Description }}
             </div>
+            {{ end }}
+
         </div>
 
         <div class="py-2">

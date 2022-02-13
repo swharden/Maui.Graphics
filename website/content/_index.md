@@ -2,12 +2,13 @@
 Title: Maui.Graphics
 Description: Resources for drawing in .NET with Maui.Graphics
 hideMenu: true
+hideDescription: true
 ---
 
 [![](https://badgen.net/nuget/v/Microsoft.Maui.Graphics/pre)](https://github.com/dotnet/Microsoft.Maui.Graphics)
 [![](https://img.shields.io/github/license/dotnet/Microsoft.Maui.Graphics?color=%231281c0)](https://github.com/dotnet/Microsoft.Maui.Graphics/blob/main/LICENSE)
 
-The [`Microsoft.Maui.Graphics` project](https://github.com/dotnet/Microsoft.Maui.Graphics) is currently in preview and anticipated to [release with .NET MAUI in 2022](https://devblogs.microsoft.com/dotnet/update-on-dotnet-maui/)
+The `Microsoft.Maui.Graphics` package is in preview but anticipated to [release with .NET MAUI](https://github.com/dotnet/maui/wiki/Roadmap) in mid-2022
 
 <div class="text-center">
 
