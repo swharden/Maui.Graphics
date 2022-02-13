@@ -8,6 +8,7 @@ on:
 
 jobs:
   deploy:
+    name: Build and Deploy Website
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
@@ -20,6 +21,7 @@ jobs:
 
       - name: 🛠️ Build
         run: hugo --minify --verbose --debug
+        working-directory: ./website
 
       - name: 🚀 Deploy
         uses: SamKirkland/FTP-Deploy-Action@a9644610a0efe63542b1887c9317ce8628f56521 # 4.2.0
