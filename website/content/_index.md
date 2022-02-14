@@ -12,7 +12,7 @@ The `Microsoft.Maui.Graphics` package is in preview but anticipated to [release 
 
 <div class="text-center">
 
-![](images/maui-working.svg)
+![](/images/maui-working.svg)
 
 </div>
 
