@@ -47,16 +47,15 @@ private void SKElement_PaintSurface(object sender, SkiaSharp.Views.Desktop.SKPai
     ICanvas canvas = new SkiaCanvas() { Canvas = e.Surface.Canvas };
 
     canvas.FillColor = Colors.Navy;
-    canvas.FillRectangle(0, 0, bmp.Width, bmp.Height);
+    canvas.FillRectangle(0, 0, (float)SkElement1.ActualWidth, (float)SkElement1.ActualHeight);
 
-    Random rand = new(0);
     canvas.StrokeColor = Colors.White.WithAlpha(.5f);
     canvas.StrokeSize = 2;
     for (int i = 0; i < 100; i++)
     {
-        float x = rand.Next(bmp.Width);
-        float y = rand.Next(bmp.Height);
-        float r = rand.Next(5, 50);
+        float x = Random.Shared.Next((int)SkElement1.ActualWidth);
+        float y = Random.Shared.Next((int)SkElement1.ActualHeight);
+        float r = Random.Shared.Next(5, 50);
         canvas.DrawCircle(x, y, r);
     }
 }
