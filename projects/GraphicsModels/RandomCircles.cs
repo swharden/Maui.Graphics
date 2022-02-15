@@ -3,14 +3,14 @@ using Microsoft.Maui.Graphics;
 
 namespace GraphicsModels
 {
-    public class RandomCircles : IDrawable
+    public class RandomCircles 
     {
         private readonly Random Rand = new Random();
 
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, int width, int height)
         {
             canvas.FillColor = Color.FromArgb("#003366");
-            canvas.FillRectangle(dirtyRect);
+            canvas.FillRectangle(0, 0, width, height);
 
             for (int i = 0; i < 500; i++)
             {
@@ -21,8 +21,8 @@ namespace GraphicsModels
                     a: .5);
 
                 canvas.FillCircle(
-                    centerX: (float)Rand.NextDouble() * dirtyRect.Width,
-                    centerY: (float)Rand.NextDouble() * dirtyRect.Height,
+                    centerX: (float)Rand.NextDouble() * width,
+                    centerY: (float)Rand.NextDouble() * height,
                     radius: (float)Rand.NextDouble() * 5 + 5);
             }
 
@@ -35,10 +35,9 @@ namespace GraphicsModels
 
             canvas.DrawString(
                 value: "This is Maui.Graphics",
-                x: dirtyRect.Width / 2,
-                y: dirtyRect.Height / 2,
+                x: width / 2,
+                y: height / 2,
                 horizontalAlignment: HorizontalAlignment.Center);
         }
     }
-
 }

@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GraphicsModels\GraphicsModels.csproj" />
-    <ProjectReference Include="..\controls\Microsoft.Maui.Graphics.Skia.WPF\Microsoft.Maui.Graphics.Skia.WPF.csproj" />
   </ItemGroup>
 
 </Project>
