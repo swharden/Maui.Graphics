@@ -6,7 +6,7 @@
 
 This repository/website is not affiliated with Microsoft.
 
-## Developer Environment
+## Development Environment
 
 This static website is generated from Markdown using [Hugo](https://gohugo.io/). 
 
@@ -15,7 +15,7 @@ This static website is generated from Markdown using [Hugo](https://gohugo.io/).
 * [Download Hugo](https://github.com/gohugoio/hugo/releases) and ensure it is in your PATH
 * Open a console to the website folder: `cd website`
 * Launch Hugo's development server: `hugo serve`
-* Navigate to http://localhost:1313
+* Navigate to the URL displayed in the output (e.g., http://localhost:1313)
 * The website updates in real time as markdown files are edited
 
 ### Deployment
