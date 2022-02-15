@@ -15,9 +15,6 @@ dotnet new console
 
 #### 2. Add Maui.Graphics Packages
 
-* [`Microsoft.Maui.Graphics`](https://www.nuget.org/packages/Microsoft.Maui.Graphics)
-* [`Microsoft.Maui.Graphics.Skia`](https://www.nuget.org/packages/Microsoft.Maui.Graphics.Skia/6.0.200-preview.13.935)
-
 ```
 dotnet add package Microsoft.Maui.Graphics --prerelease
 dotnet add package Microsoft.Maui.Graphics.Skia --prerelease
@@ -31,22 +28,21 @@ Create a bitmap export context, interact with its canvas, then save the output a
 using Microsoft.Maui.Graphics; // 6.0.200-preview.13.935
 using Microsoft.Maui.Graphics.Skia; // 6.0.200-preview.13.935
 
-BitmapExportContext bmp = SkiaGraphicsService.Instance.CreateBitmapExportContext(600, 400);
-SizeF bmpSize = new(bmp.Width, bmp.Height);
+SkiaBitmapExportContext bmp = new(600, 400, 1.0f);
 ICanvas canvas = bmp.Canvas;
 
 canvas.FillColor = Colors.Navy;
-canvas.FillRectangle(0, 0, bmpSize.Width, bmpSize.Height);
+canvas.FillRectangle(0, 0, bmp.Width, bmp.Height);
 
 Random rand = new(0);
-for (int i = 0; i < 1000; i++)
+canvas.StrokeColor = Colors.White.WithAlpha(.5f);
+canvas.StrokeSize = 2;
+for (int i = 0; i < 100; i++)
 {
-    canvas.StrokeColor = Colors.White.WithAlpha(.5f);
-    canvas.DrawLine(
-        x1: (float)rand.NextDouble() * bmpSize.Width,
-        y1: (float)rand.NextDouble() * bmpSize.Height,
-        x2: (float)rand.NextDouble() * bmpSize.Width,
-        y2: (float)rand.NextDouble() * bmpSize.Height);
+    float x = rand.Next(bmp.Width);
+    float y = rand.Next(bmp.Height);
+    float r = rand.Next(5, 50);
+    canvas.DrawCircle(x, y, r);
 }
 
 bmp.WriteToFile("console.png");
