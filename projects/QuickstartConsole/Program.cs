@@ -1,22 +1,21 @@
 ﻿using Microsoft.Maui.Graphics;
 using Microsoft.Maui.Graphics.Skia;
 
-BitmapExportContext bmp = SkiaGraphicsService.Instance.CreateBitmapExportContext(600, 400);
-SizeF bmpSize = new(bmp.Width, bmp.Height);
+SkiaBitmapExportContext bmp = new(600, 400, 1.0f);
 ICanvas canvas = bmp.Canvas;
 
 canvas.FillColor = Colors.Navy;
-canvas.FillRectangle(0, 0, bmpSize.Width, bmpSize.Height);
+canvas.FillRectangle(0, 0, bmp.Width, bmp.Height);
 
 Random rand = new(0);
-for (int i = 0; i < 1000; i++)
+canvas.StrokeColor = Colors.White.WithAlpha(.5f);
+canvas.StrokeSize = 2;
+for (int i = 0; i < 100; i++)
 {
-    canvas.StrokeColor = Colors.White.WithAlpha(.5f);
-    canvas.DrawLine(
-        x1: (float)rand.NextDouble() * bmpSize.Width,
-        y1: (float)rand.NextDouble() * bmpSize.Height,
-        x2: (float)rand.NextDouble() * bmpSize.Width,
-        y2: (float)rand.NextDouble() * bmpSize.Height);
+    float x = rand.Next(bmp.Width);
+    float y = rand.Next(bmp.Height);
+    float r = rand.Next(5, 50);
+    canvas.DrawCircle(x, y, r);
 }
 
 bmp.WriteToFile("console.png");
