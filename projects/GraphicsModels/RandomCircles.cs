@@ -7,10 +7,10 @@ namespace GraphicsModels
     {
         private readonly Random Rand = new Random();
 
-        public void Draw(ICanvas canvas, int width, int height)
+        public void Draw(ICanvas canvas, double width, double height)
         {
             canvas.FillColor = Color.FromArgb("#003366");
-            canvas.FillRectangle(0, 0, width, height);
+            canvas.FillRectangle(0, 0, (float)width, (float)height);
 
             for (int i = 0; i < 500; i++)
             {
@@ -21,8 +21,8 @@ namespace GraphicsModels
                     a: .5);
 
                 canvas.FillCircle(
-                    centerX: (float)Rand.NextDouble() * width,
-                    centerY: (float)Rand.NextDouble() * height,
+                    centerX: (float)Rand.NextDouble() * (float)width,
+                    centerY: (float)Rand.NextDouble() * (float)height,
                     radius: (float)Rand.NextDouble() * 5 + 5);
             }
 
@@ -35,8 +35,8 @@ namespace GraphicsModels
 
             canvas.DrawString(
                 value: "This is Maui.Graphics",
-                x: width / 2,
-                y: height / 2,
+                x: (float)width / 2,
+                y: (float)height / 2,
                 horizontalAlignment: HorizontalAlignment.Center);
         }
     }
