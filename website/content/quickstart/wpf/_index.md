@@ -1,10 +1,11 @@
 ---
 Title: Maui.Graphics WPF Quickstart
-Description: How to use Maui.Graphics in a WPF application
-Date: "2021-09-21"
+Description: How to draw using Maui.Graphics in a WPF application
 ---
 
-This page demonstrates how to use Maui.Graphics in a WPF application. 
+This page describes how to draw using Maui.Graphics from a WPF application.
+
+> **⚠️ Warning:** The Maui.Graphics package is currently in preview and its API may change as the library matures.
 
 <div class='text-center img-border'>
 
@@ -12,101 +13,55 @@ This page demonstrates how to use Maui.Graphics in a WPF application.
 
 </div>
 
-## Steps
+#### 1. Create a WPF Application
 
-> **WARNING:** At the time of writing Microsoft.Maui.Graphics is still in pre-release and the WPF control is not available as a NuGet package. This is likely to get easier in the future.
-
-* Create a WPF application
-* Add NuGet packages
-  * [Microsoft.Maui.Graphics](https://www.nuget.org/packages/Microsoft.Maui.Graphics)
-  * [Microsoft.Maui.Graphics.Skia](https://www.nuget.org/packages/Microsoft.Maui.Graphics.Skia)
-* Add WPF control package from source
-  * [Microsoft.Maui.Graphics.Skia.WPF](https://github.com/dotnet/Microsoft.Maui.Graphics/tree/main/src/Microsoft.Maui.Graphics.Skia.WPF) (it's not on NuGet yet)
-* Create a `Drawable` that describes what you want to render
-* Place a `WDSkiaGraphicsView` in your layout
-* Create a `Drawable` and assign it to `WDSkiaGraphicsView`
-* Add a `Loaded` event to invalidate the control (forcing a render at launch)
-
-## MyDrawable.cs
-```cs
-using Microsoft.Maui.Graphics;
-using System;
-
-public class MyDrawable : IDrawable
-{
-    private readonly Random Rand = new();
-
-    public void Draw(ICanvas canvas, RectangleF dirtyRect)
-    {
-        canvas.FillColor = Color.FromArgb("#003366");
-        canvas.FillRectangle(dirtyRect);
-
-        for (int i = 0; i < 500; i++)
-        {
-            canvas.FillColor = Color.FromRgba(
-                r: Rand.NextDouble(),
-                g: Rand.NextDouble(),
-                b: Rand.NextDouble(),
-                a: .5);
-
-            canvas.FillCircle(
-                centerX: (float)Rand.NextDouble() * dirtyRect.Width,
-                centerY: (float)Rand.NextDouble() * dirtyRect.Height,
-                radius: (float)Rand.NextDouble() * 5 + 5);
-        }
-
-        canvas.FontSize = 36;
-        canvas.FontColor = Colors.White;
-        canvas.SetShadow(
-            offset: new SizeF(2, 2),
-            blur: 1,
-            color: Colors.Black);
-
-        canvas.DrawString(
-            value: "This is Maui.Graphics",
-            x: dirtyRect.Width / 2,
-            y: dirtyRect.Height / 2,
-            horizontalAlignment: HorizontalAlignment.Center);
-    }
-}
+```sh
+dotnet new wpf
 ```
 
-## MainWindow.xaml
+#### 2. Add NuGet Packages
+
+```sh
+dotnet add package Microsoft.Maui.Graphics --prerelease
+dotnet add package Microsoft.Maui.Graphics.Skia --prerelease
+dotnet add package SkiaSharp.Views.WPF --prerelease
+```
+
+#### 3. Add a SkiaSharp Element
 
 ```xml
 <Window x:Class="QuickstartWpf.MainWindow"
-        ...
-        xmlns:Skia="clr-namespace:Microsoft.Maui.Graphics.Skia;assembly=Microsoft.Maui.Graphics.Skia.WPF"
-        Title="Maui.Graphics Quickstart - WPF (Skia)" Height="300" Width="400">
+        xmlns:local="clr-namespace:QuickstartWpf"
+        xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF">
     <Grid>
-        <Skia:WDSkiaGraphicsView Name="MyGraphicsView" />
+        <skia:SKElement PaintSurface="SKElement_PaintSurface"/>
     </Grid>
 </Window>
 ```
 
-## MainWindow.xaml.cs
-
-* 💡 Invaliding the control after the window is loaded forces it to draw after the program starts
+#### 4. Draw Graphics
 
 ```cs
-using System.Windows;
-
-public partial class MainWindow : Window
+private void SKElement_PaintSurface(object sender, SkiaSharp.Views.Desktop.SKPaintSurfaceEventArgs e)
 {
-    public MainWindow()
+    ICanvas canvas = new SkiaCanvas() { Canvas = e.Surface.Canvas };
+
+    canvas.FillColor = Colors.Navy;
+    canvas.FillRectangle(0, 0, bmp.Width, bmp.Height);
+
+    Random rand = new(0);
+    canvas.StrokeColor = Colors.White.WithAlpha(.5f);
+    canvas.StrokeSize = 2;
+    for (int i = 0; i < 100; i++)
     {
-        InitializeComponent();
-        MyGraphicsView.Drawable = new MyDrawable();
-        Loaded += (_, _) => MyGraphicsView.Invalidate();
+        float x = rand.Next(bmp.Width);
+        float y = rand.Next(bmp.Height);
+        float r = rand.Next(5, 50);
+        canvas.DrawCircle(x, y, r);
     }
 }
 ```
 
-## Source Code
-
-* https://github.com/swharden/Maui.Graphics/tree/main/projects
-
 ## Resources
-* https://maui.graphics
-* [Drawing with Maui.Graphics](https://swharden.com/blog/2021-09-10-maui-graphics)
-* [Microsoft.Maui.Graphics](https://github.com/dotnet/Microsoft.Maui.Graphics) project on GitHub
+
+* [Download the source code for this project](https://github.com/swharden/Maui.Graphics/tree/main/projects)

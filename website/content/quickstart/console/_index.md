@@ -1,6 +1,6 @@
 ---
 Title: Maui.Graphics Console Quickstart
-Description: How to use Maui.Graphics in a Console Application
+Description: How to draw using Maui.Graphics in a Console Application
 ---
 
 This page describes how to draw using Maui.Graphics from a console application and save the output as an image file.
@@ -13,7 +13,7 @@ This page describes how to draw using Maui.Graphics from a console application a
 dotnet new console
 ```
 
-#### 2. Add Maui.Graphics Packages
+#### 2. Add NuGet Packages
 
 ```
 dotnet add package Microsoft.Maui.Graphics --prerelease
