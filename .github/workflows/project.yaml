@@ -1,4 +1,4 @@
-name: Build and Test Code
+name: Code
 
 on:
   workflow_dispatch:
@@ -14,8 +14,8 @@ env:
   SOLUTION_FOLDER: "projects"
 
 jobs:
-  deploy:
-    name: Build and Test Code
+  test:
+    name: Build and Test
     runs-on: windows-latest
     steps:
       - name: 🛒 Checkout
