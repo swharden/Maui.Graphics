@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 using Microsoft.Maui.Graphics.Skia;
+using System;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -7,7 +8,6 @@ namespace QuickstartWpf
 {
     public partial class MainWindow : Window
     {
-        readonly GraphicsModels.RandomCircles GraphicsModel = new();
         readonly DispatcherTimer Timer1 = new();
 
         public MainWindow()
@@ -20,7 +20,19 @@ namespace QuickstartWpf
         private void SKElement_PaintSurface(object sender, SkiaSharp.Views.Desktop.SKPaintSurfaceEventArgs e)
         {
             ICanvas canvas = new SkiaCanvas() { Canvas = e.Surface.Canvas };
-            GraphicsModel.Draw(canvas, SkElement1.ActualWidth, SkElement1.ActualHeight);
+
+            canvas.FillColor = Colors.Navy;
+            canvas.FillRectangle(0, 0, (float)SkElement1.ActualWidth, (float)SkElement1.ActualHeight);
+
+            canvas.StrokeColor = Colors.White.WithAlpha(.5f);
+            canvas.StrokeSize = 2;
+            for (int i = 0; i < 100; i++)
+            {
+                float x = Random.Shared.Next((int)SkElement1.ActualWidth);
+                float y = Random.Shared.Next((int)SkElement1.ActualHeight);
+                float r = Random.Shared.Next(5, 50);
+                canvas.DrawCircle(x, y, r);
+            }
         }
 
         private void SKElement_SizeChanged(object sender, SizeChangedEventArgs e) => SkElement1.InvalidateVisual();

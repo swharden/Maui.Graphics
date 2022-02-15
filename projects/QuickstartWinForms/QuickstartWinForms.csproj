@@ -14,8 +14,4 @@
 		<PackageReference Include="SkiaSharp.Views.WindowsForms" Version="2.88.0-preview.187" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\GraphicsModels\GraphicsModels.csproj" />
-	</ItemGroup>
-
 </Project>
