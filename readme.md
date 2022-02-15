@@ -11,9 +11,9 @@ This repository/website is not affiliated with Microsoft.
 
 ## Development Environment
 
-This static website is generated from Markdown using [Hugo](https://gohugo.io/). 
+https://maui.graphics is a static site generated from Markdown using [Hugo](https://gohugo.io/).
 
-### Setup
+### Run Locally
 
 * [Download Hugo](https://github.com/gohugoio/hugo/releases) and ensure it is in your PATH
 * Open a console to the website folder: `cd website`
@@ -21,5 +21,5 @@ This static website is generated from Markdown using [Hugo](https://gohugo.io/).
 * Navigate to the URL displayed in the output (e.g., http://localhost:1313)
 * The website updates in real time as markdown files are edited
 
-### Deployment
-Commits to the `main` branch trigger a GitHub Action that uses Hugo to build the website in the cloud and deploy it using FTP (see [ci.yaml](.github/workflows/ci.yaml)).
+### Deploy
+Commits to the `main` branch trigger a GitHub Action that uses Hugo to build the website in the cloud and deploy it using FTP (see [website.yaml](.github/workflows/website.yaml)).
