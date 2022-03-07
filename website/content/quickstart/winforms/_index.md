@@ -53,6 +53,24 @@ private void skglControl1_PaintSurface(object sender, SkiaSharp.Views.Desktop.SK
 }
 ```
 
+#### 5. Render on Events
+
+It is often a good idea to re-render when the window size changes
+
+```cs
+private void skglControl1_SizeChanged(object s, EventArgs e) => skglControl1.Invalidate();
+```
+
+You can also request renders manually or automatically using a timer
+
+```cs
+private void button1_Click(object s, EventArgs e) => skglControl1.Invalidate();
+```
+
+```cs
+private void timer1_Tick(object s, EventArgs e) => skglControl1.Invalidate();
+```
+
 ## Resources
 
 * [Download the source code for this project](https://github.com/swharden/Maui.Graphics/tree/main/projects)
