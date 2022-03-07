@@ -7,7 +7,7 @@ This page describes how to draw using Maui.Graphics from a Windows Forms applica
 
 <div class='text-center img-border'>
 
-![](maui-graphics-quickstart-winforms.png)
+![](maui-graphics-quickstart-winforms-2.png)
 
 </div>
 
