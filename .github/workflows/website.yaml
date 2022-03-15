@@ -3,6 +3,8 @@ name: Website
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
 
 env:
   HUGO_VERSION: 0.92.2
