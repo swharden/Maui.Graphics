@@ -2,3 +2,4 @@ RedirectMatch 301 /quickstart/console https://swharden.com/csdv/maui.graphics/qu
 RedirectMatch 301 /quickstart/winforms https://swharden.com/csdv/maui.graphics/quickstart-winforms/
 RedirectMatch 301 /quickstart/wpf https://swharden.com/csdv/maui.graphics/quickstart-wpf/
 RedirectMatch 301 /quickstart/maui https://swharden.com/csdv/maui.graphics/quickstart-maui/
+RedirectMatch 301 /quickstart https://swharden.com/csdv/maui.graphics/
