@@ -15,7 +15,7 @@ jobs:
       - name: 🛒 Checkout
         uses: actions/checkout@v2
 
-      - name: ✨ Setup Hugo v${HUGO_VERSION}
+      - name: ✨ Setup Hugo v${{ HUGO_VERSION }}
         run: |
           mkdir ~/hugo
           cd ~/hugo
