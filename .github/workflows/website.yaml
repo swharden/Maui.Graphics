@@ -3,10 +3,9 @@ name: Website
 on:
   workflow_dispatch:
   push:
-    paths:
-      - "website/**"
-    branches:
-      - main
+
+env:
+  HUGO_VERSION: 0.92.2
 
 jobs:
   deploy:
@@ -16,9 +15,7 @@ jobs:
       - name: 🛒 Checkout
         uses: actions/checkout@v2
 
-      - name: ✨ Setup Hugo
-        env:
-          HUGO_VERSION: 0.92.2
+      - name: ✨ Setup Hugo v${HUGO_VERSION}
         run: |
           mkdir ~/hugo
           cd ~/hugo
@@ -34,5 +31,6 @@ jobs:
           install -m 600 -D /dev/null ~/.ssh/id_rsa
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           echo "${{ secrets.KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
       - name: 🚀 Deploy
         run: rsync --archive --delete --stats -e 'ssh -p 18765' 'website/public/' ${{ secrets.REMOTE_DEST }}
