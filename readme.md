@@ -1,6 +1,5 @@
 # Maui.Graphics
 
-[![Code](https://github.com/swharden/Maui.Graphics/actions/workflows/code.yaml/badge.svg)](https://github.com/swharden/Maui.Graphics/actions/workflows/code.yaml)
 [![Website](https://github.com/swharden/Maui.Graphics/actions/workflows/website.yaml/badge.svg)](https://github.com/swharden/Maui.Graphics/actions/workflows/website.yaml)
 
 **This repository contains source code for the https://maui.graphics website.** [Microsoft.Maui.Graphics](https://github.com/dotnet/Microsoft.Maui.Graphics) is a 2D graphics library developed by Microsoft as part of the [.NET MAUI project](https://github.com/dotnet/maui). It can be used to create 2D graphics in most .NET projects (not just MAUI apps).
