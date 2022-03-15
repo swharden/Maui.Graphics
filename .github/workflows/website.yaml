@@ -17,24 +17,22 @@ jobs:
         uses: actions/checkout@v2
 
       - name: ✨ Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: "0.92.2"
+        env:
+          HUGO_VERSION: 0.92.2
+        run: |
+          mkdir ~/hugo
+          cd ~/hugo
+          curl -L "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" --output hugo.tar.gz
+          tar -xvzf hugo.tar.gz
+          sudo mv hugo /usr/local/bin
 
       - name: 🛠️ Build
-        run: hugo --minify --verbose --debug
-        working-directory: ./website
+        run: hugo --source website --minify
 
+      - name: 🔑 Install SSH Key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.KNOWN_HOSTS }}" > ~/.ssh/known_hosts
       - name: 🚀 Deploy
-        uses: SamKirkland/FTP-Deploy-Action@a9644610a0efe63542b1887c9317ce8628f56521 # 4.2.0
-        with:
-          local-dir: ./website/public/
-          server-dir: /maui.graphics/public_html/
-          protocol: ftps
-          server: maui.graphics
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          log-level: minimal
-
-      - name: 🧹 Clear Cache
-        run: curl --user deploy:${{ secrets.CACHE_PASSWORD }} https://maui.graphics/admin/clear-cache.php
+        run: rsync --archive --delete --stats -e 'ssh -p 18765' 'website/public/' ${{ secrets.REMOTE_DEST }}
