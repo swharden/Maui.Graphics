@@ -3,6 +3,7 @@ title = "Maui.Graphics"
 author = "Scott W Harden"
 copyright = "Copyright © 2022 by Scott W Harden and the open-source community."
 enableInlineShortcodes = true
+googleAnalytics = "G-X5V5LZMVT4"
 
 [markup]
   [markup.goldmark]
