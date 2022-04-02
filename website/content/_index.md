@@ -1,6 +1,6 @@
 ---
 Title: Maui.Graphics
-Description: Resources for drawing in .NET with Maui.Graphics
+Description: Resources for drawing in .NET using Microsoft.Maui.Graphics
 ---
 
 [![](https://badgen.net/nuget/v/Microsoft.Maui.Graphics/pre)](https://github.com/dotnet/Microsoft.Maui.Graphics)
