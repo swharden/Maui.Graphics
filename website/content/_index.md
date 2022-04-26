@@ -8,7 +8,7 @@ Description: Resources for drawing in .NET using Microsoft.Maui.Graphics
 
 The `Microsoft.Maui.Graphics` package is in preview but anticipated to [release with .NET MAUI](https://github.com/dotnet/maui/wiki/Roadmap) in mid-2022
 
-<img src="images/dotnet-bot-working.svg" class="d-block mx-auto my-5">
+<img src="images/dotnet-bot-painting.png" class="d-block mx-auto my-5 w-50">
 
 ## Resources
 
