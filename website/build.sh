@@ -1,1 +1,0 @@
-hugo --cleanDestinationDir --minify

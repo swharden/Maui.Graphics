@@ -1,9 +1,0 @@
-baseURL = "https://maui.graphics"
-title = "Maui.Graphics"
-enableInlineShortcodes = true
-disableKinds = ["taxonomy", "taxonomyTerm"]
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true

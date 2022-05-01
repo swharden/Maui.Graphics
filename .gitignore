@@ -1,7 +1,4 @@
-website/public/**
-wwwroot/*/index.html
 .vscode/
 .vs/
 bin/
 obj/
-content/**/index.html
