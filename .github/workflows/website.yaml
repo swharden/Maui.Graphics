@@ -16,3 +16,5 @@ jobs:
           echo "${{ secrets.KNOWN_HOSTS }}" > ~/.ssh/known_hosts
       - name: 🚀 Upload
         run: rsync --archive --delete --stats -e 'ssh -p 18765' 'src/' ${{ secrets.REMOTE_DEST }}
+      - name: 🧹 Purge Cache
+        run: curl https://maui.graphics/admin/purge/
